@@ -97,12 +97,23 @@
             text-align: center;   
 
         }
-
+        #titulo {
+            font-family: Impact, fantasy;
+            margin-top: 18px;
+            font-size: 42px ;
+        }
+        #tela {
+            margin-left: 120px;
+            margin-top: 150px;
+            border: 8px solid black;
+        }
 
     </style>
 </head>
 <body   style="background-size: cover;width:1200px;height: 550px;background: url('https://www.revistaferramental.com.br/admin/images/artigos/industria,4,0.jpg') center;"> 
-    <div id="em_cima">RELATORIOS TECKMA</div>
+    <div id="em_cima">
+        <h7 id="titulo">LIGHTHOUSE</h7>
+    </div>
    
     
     <div id="todos">
@@ -161,7 +172,7 @@
                 <div class="btnMenu1">Exemplo Mercedez2</div>
             </div>
         </div>
-
+        <iframe id="tela"style="display: none" width="500" height="300" src="" frameborder="0" allowFullScreen="true"></iframe>
     </div>
 
     <div id="voltar" onclick="Voltar()">Voltar</div>
@@ -174,7 +185,8 @@
 
             let menuMercedez = document.getElementById(ocultar);
             let menuEmbraer = document.getElementById(mostrar);
-            
+            let tela = document.getElementById("tela").style.display="none";
+
             for(let k=2;k<=3;k++)//comecando no menu 2 pra abrir corretamente o 1
             {
                 let ocultarTudo = document.getElementsByClassName("menu"+k);
@@ -212,7 +224,7 @@
         function btn_menu1_1(mostrar,ocultar,botao){
            let classeOcultar = document.getElementsByClassName(ocultar);
            let itemMostrar = document.getElementById(mostrar);
-
+           let tela = document.getElementById("tela").style.display="none";
     
            let ocultarbracos = ocultar[4];
            for(let k=ocultarbracos;k<=3;k++)
@@ -246,16 +258,16 @@
         }
 
         function abrirIframe(link){
-            let tds = document.getElementById("todos").style.display = "none";
+            //let tds = document.getElementById("todos").style.display = "none";
             let tela = document.getElementById("tela");
-            let voltar = document.getElementById("voltar").style.display="block";
+            //let voltar = document.getElementById("voltar").style.display="block";
             tela.style.display = "block";
             tela.src=link;
         }
         function Voltar(){
-            let tds = document.getElementById("todos").style.display = "flex";
+            //let tds = document.getElementById("todos").style.display = "flex";
             let tela = document.getElementById("tela");
-            let voltar = document.getElementById("voltar").style.display="none";
+            //let voltar = document.getElementById("voltar").style.display="none";
             tela.style.display = "none";
             tela.src="";
         }
